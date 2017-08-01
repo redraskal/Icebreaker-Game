@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html onselectstart="return false;">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css"/>
+	</head>
+  <body style="overflow: hidden;">
+    <div id="loading-icon" style="display: none;"><img src="assets/img/loading.png"></img></div>
+    <div id="splash-screen" style="display: none;">
+      <h3>Warning</h3>
+      Please do not exit while the wheel icon is visible.
+    </div>
+    <div id="main-menu" style="display: none;">
+      <div class="clouds">
+        <img class="cloud" width="5%" height="5%" src="assets/img/cloud.png"></img>
+        <img class="cloud" src="assets/img/cloud.png"></img>
+        <img class="cloud" width="5%" height="5%" src="assets/img/cloud.png"></img>
+        <img class="cloud" src="assets/img/cloud.png"></img>
+        <img class="cloud" src="assets/img/cloud.png"></img>
+        <img class="cloud" width="5%" height="5%" src="assets/img/cloud.png"></img>
+        <img class="cloud" src="assets/img/cloud.png"></img>
+        <img class="cloud" width="5%" height="5%" src="assets/img/cloud.png"></img>
+      </div>
+      <div class="main-menu-container">
+        <h1>Icebreaker</h1>
+        <ul class="main-menu-sel" id="main-menu-sel">
+          <li id="main-menu-continue" class="disabled">Continue</li>
+          <li id="main-menu-new">New Game</li>
+          <li id="main-menu-options">Options</li>
+          <li id="main-menu-quit">Quit</li>
+        </ul>
+        <div id="options-menu" style="display: none;">
+         <h3>Options</h3>
+         <hr style="float: left;" width="30%">
+         <br><br>
+         <div class="option">
+          <span>Music Volume:</span><div id="music-slider"></div>
+         </div>
+         <div class="option">
+          <span>SFX Volume:</span><div id="sfx-slider" class="sfx-slider"></div>
+         </div>
+         <ul class="main-menu-sel">
+          <li id="options-fullscreen">Toggle Fullscreen</li>
+         </ul>
+         <ul class="main-menu-sel">
+          <li id="options-back">Back</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pause-container" id="pause" style="display: none;">
+      <h1>Icebreaker</h1>
+      <ul class="main-menu-sel" id="pause-sel">
+        <li id="pause-continue">Continue</li>
+        <li id="pause-main-menu">Main Menu</li>
+        <li id="pause-quit">Quit</li>
+      </ul>
+    </div>
+    <div class="pause-backdrop" style="display: none;"></div>
+    <div id="loading-screen" style="display: none;">
+      <h3 class="loading-tip">
+      <span id="loading-tip-1">All of your actions have consequences, choose wisely.</span>
+      <span id="loading-tip-2" style="display: none">You cannot undo the past.</span>
+      </h3>
+    </div>
+    <div id="game" style="display: none;">
+      <img id="game-bg" draggable="false"></img>
+      <div id="game-text" style="display: none;"></div>
+      <div id="dialogue-box" style="display: none;">
+        <img id="left-character" draggable="false"></img>
+        <img id="right-character" draggable="false"></img>
+        <span id="dialogue-text"></span>
+        <span id="dialogue-next" style="display: none;"></span>
+        <br>
+        <ul class="main-menu-sel" id="dialogue-sel"></ul>
+      </div>
+    </div>
+    <audio id="music" class="default-slider"></audio>
+    <div id="sound-effects" class="default-slider"></div>
+  </body>
+  <script>
+    require('./renderer.js');
+  </script>
+</html>

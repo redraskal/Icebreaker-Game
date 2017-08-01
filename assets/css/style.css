@@ -1,0 +1,355 @@
+@font-face {
+  font-family: Icebreaker;
+  src: url("../fonts/Icebreaker.otf") format("opentype");
+}
+
+@font-face {
+  font-family: OpenSans-Light;
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: OpenSans-Light;
+}
+
+audio {
+  display: none;
+}
+
+#sound-effects {
+  display: none;
+}
+
+h1,h2,h3 {
+  font-family: Icebreaker;
+}
+
+h1{
+  font-size: 80px !important;
+}
+
+h2{
+  font-size: 40px !important;
+}
+
+hr {
+  height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#loading-icon {
+  position: fixed;
+  z-index: -1;
+  bottom: 15px;
+  right: 20px;
+  animation: spin 6s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#splash-screen {
+  text-align: center;
+}
+
+#main-menu {
+  width: 100%;
+  min-height: 100%;
+  background: url("../img/main-menu.png");
+  background-size: cover;
+}
+
+.clouds {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.cloud {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-name: cloudAnimation;
+}
+
+.cloud:nth-child(1) {
+  animation-delay: -18s;
+  top: 6%;
+}
+
+.cloud:nth-child(2) {
+  animation-delay: -36s;
+  top: 12%;
+}
+
+.cloud:nth-child(3) {
+  animation-delay: -55s;
+  top: 18%;
+}
+
+.cloud:nth-child(4) {
+  animation-delay: -73s;
+  top: 24%;
+}
+
+.cloud:nth-child(5) {
+  animation-delay: -92s;
+  top: 30%;
+}
+
+.cloud:nth-child(6) {
+  animation-delay: -110s;
+  top: 36%;
+}
+
+.cloud:nth-child(7) {
+  animation-delay: -129s;
+  top: 42%;
+}
+
+.cloud:nth-child(8) {
+  animation-delay: -147s;
+  top: 48%;
+}
+
+@keyframes cloudAnimation {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-50vw);
+  }
+}
+
+.main-menu-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 13vw 13vw 0 13vw;
+  height: 100vh;
+  max-width: 98rem;
+  z-index: 90 !important;
+}
+
+.main-menu-sel {
+  height: auto;
+  padding: 6px 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.main-menu-sel li {
+  width: 140px;
+  height: 70px;
+  font-size: 14px;
+  font-family: Icebreaker;
+  font-weight: bold;
+  text-align: center; 
+  
+  height: auto;
+  padding: 6px 0px;
+  margin: 0 0 3px 0;
+}
+
+.main-menu-sel li:hover {
+  background-color: #fff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.main-menu-sel .disabled {
+  background-color: #c4c2c2 !important;
+  color: #fff !important;
+  cursor: not-allowed !important;
+}
+
+.main-menu-sel a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.option {
+  display: block;
+  text-align: left;
+  margin: 0 0 10px 0;
+  vertical-align: middle;
+}
+
+.option span {
+  padding-right: 5px;
+}
+
+.ui-slider {
+  display: inline-block;
+  position: absolute;
+  height: 5px;
+  width: 300px;
+  background: #ecf0f1;
+  border-radius: 15px;
+  margin-top: 9px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.sfx-slider {
+  margin-left: 30px !important;
+}
+
+.ui-slider-range-min {
+  height: 5px;
+  width: 300px;
+  position: absolute;
+  background: #1c92d2;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.ui-slider-handle {
+  width: 9px;
+  height: 20px;
+  border-radius: 2px;
+  background: #fff;
+  position: absolute;
+  margin-left: -8px;
+  margin-top: -8px;
+  cursor: e-resize;
+  outline: none;
+}
+
+#loading-screen {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.loading-tip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-bg {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  z-index: -1;
+  visibility: hidden;
+}
+
+#game-bg[src] {
+  visibility: visible;
+}
+
+#game-text {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 40vh;
+  text-align: center;
+}
+
+#dialogue-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  height: 220px;
+  margin: auto;
+  background: url("../img/dialogue.png");
+  background-repeat: no-repeat;
+  background-size: 500px 220px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#dialogue-text {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  float: left;
+  padding: 25px;
+}
+
+#dialogue-next {
+  position: relative;
+  right: 0;
+  top: 100px;
+  float: right;
+  padding: 25px;
+}
+
+#dialogue-sel {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  justify-content: center;
+}
+
+#dialogue-sel li {
+  float: left;
+}
+
+#left-character {
+  position: relative;
+  float: left;
+  top: -150px;
+}
+
+#right-character {
+  position: relative;
+  float: right;
+  top: -150px;
+}
+
+.pause-container {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 13vw 13vw 0 13vw;
+  height: 75vh;
+  max-width: 98rem;
+  z-index: 90 !important;
+}
+
+.pause-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 89 !important;
+  background-color: black;
+  opacity: 0.5;
+}

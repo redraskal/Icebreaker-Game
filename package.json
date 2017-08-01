@@ -1,0 +1,19 @@
+{
+  "name": "icebreaker-game",
+  "version": "0.0.1",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "icebreaker",
+    "game"
+  ],
+  "author": "redraskal",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "1.6.11"
+  }
+}

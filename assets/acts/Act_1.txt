@@ -1,0 +1,191 @@
+﻿SFX assets/sound/sfx/ocean_waves.mp3
+*[1200,3000,1200] December 22,&1929
+MUSIC assets/sound/music/calm.mp3
+BG assets/img/main-background.png
+SHOW_BOX
+TEXT Current position: 78.017355, -74.384451
+WAIT 500
+TEXT Status: Delivering barrels of oil to Baffin Bay.
+WAIT 3000
+MUSIC assets/sound/music/arctic_roar.mp3
+SFX assets/sound/sfx/metal_boom.mp3
+TEXT_CLEAR
+BG assets/img/fog-background.png
+*[1200,3000,1200] December 23,&1929
+LEFT assets/img/main_character/sleeping.png
+SFX assets/sound/sfx/alarm.mp3
+WAIT 6000
+SFX assets/sound/sfx/8bitding.mp3
+LEFT assets/img/main_character/wink.png
+WAIT 500
+LEFT assets/img/main_character/awake.png
+WAIT 300
+LEFT assets/img/main_character/wink.png
+WAIT 200
+LEFT assets/img/main_character/awake.png
+WAIT 500
+TEXT ?!??
+TEXT .....
+TEXT Where... am I?
+OPTIONS Remember|:remember
+
+:remember
+TEXT ...
+TEXT ...
+TEXT ...
+TEXT Wh..What?
+TEXT Where.. How..
+TEXT Is this all that's left?
+TEXT Alright, I need to get up, I have to get up!
+TEXT What is this stuck in my arm!? A metal pipe?
+TEXT Doesn't matter right now. I need to check and see if anyone else is here.
+TEXT I’ll head for the ship control room and see if there’s anything still there.
+OPTIONS Go to the Ship Control Room|:shipcontrolroom
+
+:shipcontrolroom
+TEXT It appears I’m one if not the only survivor.
+TEXT Wait... Is that the first mate? Guess he didn’t make it out...
+TEXT Although, what’s that note he’s got clenched in his hand?
+OPTIONS Read note|:readnote&Ignore note|:ignorenote
+
+:ignorenote
+TEXT I probably shouldn't ignore this note...
+OPTIONS Read note|:readnote
+
+:readnote
+RIGHT assets/img/big-note.png
+TEXT "I’ve made several inquiries to the supply manager...
+TEXT about the amount of oil we’re carrying,
+TEXT but he keeps saying the amount is right.
+TEXT Even when I bring this up to the Captain,
+TEXT he keeps telling me to talk to the supply manager
+TEXT about it as he’s not even fully aware of...
+TEXT what or the amount of cargo on the ship right now.
+TEXT It does seem he’s quite dismissive about it...
+TEXT but I guess it’s not really his full concern at the end of the day."
+TEXT Hmm, I’ve wasted enough time already.
+REMOVE_RIGHT
+TEXT I need to see if I can find any medical supplies on this sinking ship.
+OPTIONS Go to the Medical Center|:tomedicalcenter
+
+:tomedicalcenter
+TEXT Hmm.. What happened to the supplies in the medical center?
+TEXT I’m certain we had it fully stocked.
+TEXT May as well try and scavenge anything I can find...
+OPTIONS Search Ship Control Room|:searchshipcontrolroom&Search Storage Container|:searchstorage&Search First Mate's Cabin|:searchfirstmate
+
+:searchshipcontrolroom
+TEXT There doesn't seem to be anything of importance here.
+TEXT Just the... well ship controls and a few empty water bottles.
+OPTIONS Go to the Medical Center|:tomedicalcenter
+
+:searchstorage
+TEXT Wow... Kjetil was supposed to clean this container earlier,
+TEXT an OLD STEAK is hiding in there!
+OPTIONS Go to the Medical Center|:tomedicalcenter
+
+:searchfirstmate
+TEXT Wait a second...
+WAIT 500
+TEXT I can see a flare under the bed.
+OPTIONS Walk outside and shoot the flare|:shootflare
+
+:shootflare
+SFX assets/sound/sfx/flare.mp3
+TEXT There she goes!
+SFX assets/sound/sfx/radio.mp3
+TEXT Hello..?
+TEXT ...
+TEXT Is someone there?
+OPTIONS Check the Ship Control Room|:checkcontrolroomflare
+
+:checkcontrolroomflare
+RIGHT assets/img/radio.png
+SFX assets/sound/sfx/radio.mp3
+TEXT Just a radio.
+OPTIONS Adjust Signal Strength|:adjustradiostrength&Listen|:listen1
+
+:listen1
+TEXT I can't.. make out the words.
+OPTIONS Adjust Signal Strength|:adjustradiostrength
+
+:adjustradiostrength
+TEXT Adjusting signal strength...
+SFX assets/sound/sfx/radio.mp3
+TEXT Is this morse code?
+OPTIONS Try to read the morse code|:readmorsecode
+
+:readmorsecode
+TEXT I cannot read morse code at this state...
+TEXT It looks likes the radio is low on power.
+REMOVE_RIGHT
+TEXT Where could I find a power source...?
+OPTIONS Search the Engine Room|:searchengineroom&Search the Control Room|:morsecodesearchcontrolroom
+
+:morsecodesearchcontrolroom
+RIGHT assets/img/radio.png
+SFX assets/sound/sfx/radio.mp3
+TEXT Success! Another radio.
+TEXT Only one task left...
+OPTIONS Adjust Signal Frequency|:adjustfreq
+
+:searchengineroom
+TEXT Oh no...
+TEXT .....
+TEXT My son... he.. he's dead.
+TEXT .....
+TEXT I think my son was killed... his face... was bashed in.
+TEXT Hmm... he was the content manager of the barrels.
+TEXT Why would someone want to kill him?
+TEXT I guess there's only one other room to search.
+OPTIONS Search the Control Room|:morsecodesearchcontrolroom
+
+:adjustfreq
+RIGHT assets/img/radio.png
+SFX assets/sound/sfx/radio.mp3
+TEXT "SE**** **e b*rr**......"
+OPTIONS Adjust Signal Frequency|:adjustfreq1
+
+:adjustfreq1
+SFX assets/sound/sfx/radio.mp3
+TEXT "SE*R** *he barr***......"
+OPTIONS Adjust Signal Frequency|:adjustfreq2
+
+:adjustfreq2
+SFX assets/sound/sfx/radio.mp3
+TEXT "SEARCH the barrels......"
+REMOVE_RIGHT
+TEXT Oh... my.. god.
+OPTIONS Run to the Storage Room|:barrels
+
+:barrels
+OPTIONS Open the Barrels|:openbarrels
+
+:openbarrels
+TEXT These are not ordinary barrels...
+TEXT Pounds and pounds of valuable gems, jewelry, and one GIANT shiny diamond.
+TEXT This entire course of events happened only because of these barrels...
+TEXT Lets see what the captain thinks about this.
+OPTIONS Check the Captain's Quarters|:end
+
+:end
+TEXT Oh no...
+TEXT The captain is dead... he committed suicide.
+TEXT I might as well read his logs.
+OPTIONS Read the Captain's Logs.|:readlogs
+
+:readlogs
+RIGHT assets/img/big-note.png
+TEXT Captain's Log - 1st Entry: "It seems as though my first mate is getting suspicious...
+TEXT of the extra barrels I was able to get onto the ship.
+TEXT If he continues to push this I may need to find a way...
+TEXT of dealing with this quickly without the crew noticing."
+WAIT 500
+TEXT Captain's Log - 2nd Entry: "Now that I’ve paid off the supplies manager,
+TEXT hopefully I won’t have to worry about my first mate’s curiosity towards this matter.
+TEXT On the other hand, one of the other members of the supply group might be onto me as well.
+TEXT It seems the supplies manager caught him peeking into one of the barrels.
+TEXT This will not end well for him."
+TEXT Captain's Log - 3rd Entry: "Oh well... I did what must be done to protect my dignity."
+REMOVE_RIGHT
+ROLL_CREDITS
